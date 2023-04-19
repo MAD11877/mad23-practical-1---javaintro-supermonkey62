@@ -8,6 +8,6 @@ public class Question1
      * Hint: System.out.println(...)
      */
 
-     System.out.println("World Hello!!");
+     System.out.println("Hello World!");
   }
 }
