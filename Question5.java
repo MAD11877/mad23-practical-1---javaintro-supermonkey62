@@ -33,7 +33,7 @@ public class Question5
     boolean stopper = true;
     while(stopper)
     {
-      System.out.print("Enter number[X to stop]: ");
+      //System.out.print("Enter number[X to stop]: ");
       String number = in.next();
       if(number.toUpperCase().equals("X"))
 
