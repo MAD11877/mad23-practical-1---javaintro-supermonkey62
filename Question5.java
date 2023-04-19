@@ -31,6 +31,6 @@ public class Question5 {
                 mostFrequentNumber = currentNumber;
             }
         }
-        System.out.println("The mode is: " + mostFrequentNumber);
+        System.out.println(mostFrequentNumber);
     }
 }
