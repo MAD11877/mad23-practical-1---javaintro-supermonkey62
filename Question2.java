@@ -20,6 +20,7 @@ public class Question2
 
     double bmi = weight / (height * height);
     System.out.println("Your BMI is " + bmi);
-
+    in.close();
+    /** in.close() to get rid of that weird error for Scanner in */
   }
 }

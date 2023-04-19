@@ -11,6 +11,11 @@ public class Question3
      */
      
     Scanner in = new Scanner(System.in);
-    
+    System.out.print("Enter integer");
+    int number = in.nextInt();
+    int product = number * number;
+    System.out.println("Your number is " + product);
+    in.close();
+    /** in.close() to get rid of that weird error for Scanner in */
   }
 }
