@@ -12,14 +12,14 @@ public class Question2
      
     Scanner in = new Scanner(System.in);
 
-    System.out.print("Enter height in meters: ");
+    System.out.print("");
     double height = in.nextDouble();
 
-    System.out.print("Enter weight in kg: ");
+    System.out.print("");
     double weight = in.nextDouble();
 
     double bmi = weight / (height * height);
-    System.out.println("Your BMI is " + bmi);
+    System.out.println(bmi);
     in.close();
     /** in.close() to get rid of that weird error for Scanner in */
   }
