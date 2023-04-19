@@ -18,7 +18,7 @@ public class Question4
      */
      
     Scanner in = new Scanner(System.in);
-    System.out.print("Enter size of base for triangle: ");
+    System.out.print("");
     int base = in.nextInt();
     in.close();
 
