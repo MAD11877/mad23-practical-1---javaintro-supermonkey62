@@ -18,6 +18,23 @@ public class Question4
      */
      
     Scanner in = new Scanner(System.in);
+    System.out.print("");
+    int base = in.nextInt();
+    in.close();
+
+    for(int i = 0;
+        i < base;
+        i++)
+    {
+      for(int j = base;
+        j > i;
+        j --)
+      {
+        System.out.print("*");
+      }
+      System.out.println();
+
+    }
     
   }
 }

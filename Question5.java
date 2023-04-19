@@ -1,32 +1,36 @@
 import java.util.Scanner;
+import java.util.ArrayList;
+import java.util.List;
 
-public class Question5
-{
-  public static void main(String[] args)
-  {
-    /**
-     * Prompt the user for number. This input indicates the number of integers the user will be entering next. 
-     * Print out the mode (highest occurrence) from the set of integers. 
-     *    e.g.
-     *     > 5
-     *     > 2
-     *     > 4
-     *     > 1
-     *     > 3
-     *     > 4
-     *     4
-     * 
-     *    e.g.
-     *     > 4
-     *     > 2
-     *     > 2
-     *     > 3
-     *     > 3
-     *     2
-     * Hint: Use a loop to get input. Use another 2 loops to find the mode
-     */
-     
-    Scanner in = new Scanner(System.in);
-    
-  }
+public class Question5 {
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        List<Integer> numList = new ArrayList<>();
+        //System.out.print("Enter no. of numbers: ");
+        Integer reps = in.nextInt();
+        for(int i = 0; i < reps; i++) {
+            //System.out.print("Enter Number: ");
+            Integer number = in.nextInt();
+            numList.add(number);
+        }
+
+        // Find the mode of the list
+        int mostFrequentNumber = numList.get(0);
+        // stores the number that appears most in the list
+        int maxFrequency = 0;
+        for (int i = 0; i < numList.size(); i++) {
+            int currentNumber = numList.get(i);
+            int frequency = 0;
+            for (int j = 0; j < numList.size(); j++) {
+                if (numList.get(j) == currentNumber) {
+                    frequency++;
+                }
+            }
+            if (frequency > maxFrequency) {
+                maxFrequency = frequency;
+                mostFrequentNumber = currentNumber;
+            }
+        }
+        System.out.println(mostFrequentNumber);
+    }
 }
