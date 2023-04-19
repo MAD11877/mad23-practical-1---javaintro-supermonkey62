@@ -2,69 +2,40 @@ import java.util.Scanner;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Question5
-{
-  public static void main(String[] args)
-  {
-    /**
-     * Prompt the user for number. This input indicates the number of integers the user will be entering next. 
-     * Print out the mode (highest occurrence) from the set of integers. 
-     *    e.g.
-     *     > 5
-     *     > 2
-     *     > 4
-     *     > 1
-     *     > 3
-     *     > 4
-     *     4
-     * 
-     *    e.g.
-     *     > 4
-     *     > 2
-     *     > 2
-     *     > 3
-     *     > 3
-     *     2
-     * Hint: Use a loop to get input. Use another 2 loops to find the mode
-     */
-     
-    Scanner in = new Scanner(System.in);
-    List<Integer> numList = new ArrayList<>();
-    boolean stopper = true;
-    while(stopper)
-    {
-      //System.out.print("Enter number[X to stop]: ");
-      String number = in.next();
-      if(number.toUpperCase().equals("X"))
-
-      {
-        stopper = false;
-      }
-      else
-      {
-        int num = Integer.parseInt(number);
-        numList.add(num);
-      }
-    }
-    in.close();
-    int maxCount = 0;
-    int mode = 0;
-    
-    for (int i = 0; i < numList.size(); i++) 
-    {
-        int count = 0;
-        for (int j = 0; j < numList.size(); j++) {
-            if (numList.get(j) == numList.get(i)) {
-                count++;
+public class Question5 {
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        List<Integer> numbers = new ArrayList<>();
+        boolean stopper = true;
+        while(stopper) {
+            System.out.print("Enter number[-1 to stop]: ");
+            int number = in.nextInt();
+            if(number == -1) {
+                stopper = false;
+            } else {
+                numbers.add(number);
             }
         }
-        if (count > maxCount) {
-            maxCount = count;
-            mode = numList.get(i);
+        int mostFrequentNumber = numbers.get(0);
+        int maxFrequency = 0;
+        for (int i = 0; i < numbers.size(); i++) {
+            int currentNumber = numbers.get(i);
+            int frequency = 0;
+            for (int j = 0; j < numbers.size(); j++) {
+                if (numbers.get(j) == currentNumber) {
+                    frequency++;
+                }
+            }
+            if (frequency > maxFrequency) {
+                maxFrequency = frequency;
+                mostFrequentNumber = currentNumber;
+            }
+            for (int k = i + 1; k < numbers.size(); k++) {
+                if (numbers.get(k) == currentNumber) {
+                    i++;
+                }
+            }
         }
+        System.out.println("The most frequent number is " + mostFrequentNumber);
     }
-    
-    System.out.println(mode);
-    
-  }
 }
